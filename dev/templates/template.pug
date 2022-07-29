@@ -1,0 +1,84 @@
+include ../config/config
+include ../mixins/link
+include ../mixins/linkImg
+include ../mixins/listHeader
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="./css/index.css")
+        link(rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css")
+    body
+        div.container-fluid.beforeHeader
+            div.containers.jc-between
+                div.d-flex
+                    each item in categories
+                        +link(item.url, item.text)
+                div.d-flex
+                    a.audio-visual(href="https://www.claromusica.com/landing")
+                        i.fas.fa-headphones
+                        span Claro Música
+
+                    a.audio-visual(href="https://www.clarovideo.com/peru/homeuser")
+                        i.fas.fa-play-circle
+                        span Claro Video
+
+                    div.list-country
+                        a(href="") 
+                            span.audio-visual Estoy en 
+                            img(src="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/d370eeb5-e434-4843-b2fd-a97dd6d5aa2f-Peru.svg")
+
+        header.container-fluid
+            div.containers.header-between
+                div.jc-between.nav-left
+                    div.logo
+                        img(src="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/f05842db-8a48-40ac-ba7d-22a658083230-logotipo.svg", alt="Claro")
+                    div 
+                        nav
+                            ul
+                                +listHeader(listHeader)
+                div.nav-right 
+                    a.tienda(href="https://mi.claro.com.pe/")
+                        img(src="https://static.claro.com.pe/img/tienda.png", alt="Tienda")
+                        span Tienda
+                    a.mi-claro(href="https://mi.claro.com.pe/")
+                        img(src="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/229dcc39-97b0-4628-843b-f356c0052890-Mi+Claro.svg", alt="mi claro")
+                        span Mi Claro
+
+        main.container
+            block main
+
+        footer.container-fluid
+            section.containers
+                div.first-section
+                    div
+                        img(src="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/971d4dc2-7120-400e-af50-9824cfc9918b-Claro.svg", alt="Claro")
+                        p Todos los derechos reservados 2020
+                        div.social-network
+                            each rrss in socialNetwork 
+                                a(href= rrss.url)
+                                    img(src=rrss.img, alt=rrss.alt)
+                        p.number-contact 0-800-00200
+                    
+                    each elem in itemsFooter
+                        div
+                            p= elem.title
+                            ul 
+                                each subitem in elem.items
+                                    li
+                                        a(href="#")= subitem
+                hr
+                div.second-section
+                    each elemB in itemSecond
+                        div
+                            a(href=elemB.url)= elemB.text 
+
+
+
+
+    

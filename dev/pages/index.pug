@@ -1,0 +1,26 @@
+extends ../templates/template
+include ../mixins/cards
+include ../mixins/plans
+
+block main
+    div.banner
+        //- img(src="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/a941de02-7cf0-40c7-b623-50d151e1d5ac-Banner_Principal_Desktop_Atlas_julio2.jpg", alt="", srcset="")
+    div.container-fluid
+        div.description
+            p En Claro nos esforzamos continuamente para expandir y mejorar nuestra insfraestructura, incorporando tecnologia de vanguardia, para ofrecer a nuestros clientes las mejores soluciones de conectividad disponibles en la actualidad.
+    div.container-fluid.container-cards
+        div.content-cards
+            +cards(cards)
+    div.container-fluid.container-plans
+        p.title-plans Lorem ipsun dolor sit amet, consectetur
+        div.content-plans
+            +plans(plans)
+        div.more-plans
+            a(href="") Ver todos los planes 
+    div
+        div.reward
+            div.reward-img
+                img(src="https://i0.wp.com/www.mobileworldlive.com/wp-content/uploads/2022/06/z1.png?w=600&ssl=1", alt="")
+            div.reward-text 
+                h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus assumenda maiores quas.
+                p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti eligendi quasi, iste quibusdam doloremque beatae eos quis impedit, consectetur similique vitae quidem recusandae totam accusamus illum atque voluptate voluptatem id?

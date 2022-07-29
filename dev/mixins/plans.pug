@@ -1,0 +1,29 @@
+mixin plans(elements)
+    each item in elements
+        div.card-plan
+            div.name-plan
+                p=item.name
+            div.card-plan-item
+
+                div.first
+                    div.plan-img 
+                        img(src=item.img, alt="")
+                    div.plan-text
+                        p.title=item.title
+                        h2.price=item.price
+                        p.subtitle=item.subtitle
+                
+                div.second
+                    p.text-left=item.vDown.name
+                    p.text-right=item.vDown.vel
+                
+                div.third
+                    p.text-left=item.vUp.name
+                    p.text-right=item.vUp.vel
+                
+                div.fourth
+                    p.text-left=item.call.name
+                    p.text-right=item.call.description
+                div.fifth
+                    a.more(href="#") Conoce más
+                    a.request(href="#") Solicitar

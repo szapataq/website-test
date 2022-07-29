@@ -1,0 +1,465 @@
+$claro-primary:#DA291C;
+$claro-dark: #283342;
+$claro-secondary: #FF5C5C;
+$claro-tertiary:#0FBDDF;
+$claro-light:#ffffff;
+$claro-lightv3:#fafafa;
+$black: #000000;
+$claro-dark-light:#d8d8d8;
+
+* {
+    // background: white;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: $claro-light;
+}
+
+.container-fluid{
+    max-width: 100%;
+    
+}
+.containers{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.d-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.jc-between{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.header-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.beforeHeader{
+    background-color: $claro-dark;
+    padding: 10px 0;
+    a{
+        color: $claro-light;
+        margin-right: 20px;
+
+        p, span{
+            font-size: 14px;
+            line-height: 15px;
+        }
+
+        .fas{
+            margin-right: 5px;
+        }
+    }
+    .list-country{
+        a{
+            padding-left:30px;
+            border-left: 1px solid $claro-light;
+        }
+    }
+}
+
+@mixin link_button($color: $claro-light){
+    font-size: 16px;
+    color: $color;
+    font-weight:600;
+    padding:13.5px 28px;
+    border-radius: 32px;
+    line-height: 60px;
+    border: 2px solid $claro-light;
+    font-weight:600;
+    img{
+        margin: 0 3px -3px 0;
+    }
+}
+
+header{
+    height: 64px;
+    background-color: $claro-primary;
+    .logo{
+        line-height: 64px;
+        padding-right: 20px;
+    }
+    .nav-left{
+        ul{
+            list-style: none;
+            padding-right: 20px;
+        }
+        li{
+            display: inline-block;
+            height: 64px;
+            line-height: 60px;
+            padding: 0 20px;
+        }
+        a{
+            font-size: 16px;
+            color: $claro-light;
+            font-weight:600;
+        }
+    }
+    .nav-right{
+        position: relative;
+        .tienda{
+            @include link_button();
+
+        }
+        .mi-claro{
+            @include link_button($claro-primary);
+            background-color:$claro-light;
+            margin-left: 15px;
+
+        }
+    }
+
+
+}
+
+.banner{
+    height: 450px;
+    background-image: url("https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/a941de02-7cf0-40c7-b623-50d151e1d5ac-Banner_Principal_Desktop_Atlas_julio2.jpg");
+    background-position: 50%;
+}
+.description{
+   max-width: 1000px;
+   margin: 80px auto;
+   p{
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    color: $claro-dark;
+   }
+   
+}
+
+@mixin title_cards() {
+    font-weight: 600;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    color: $claro-dark;
+}
+.container-cards{
+    background-color: $claro-lightv3;
+    width: 100%;
+    padding: 90px 0;
+
+    .content-cards{
+        background-color: $claro-lightv3;
+        margin: 0 auto;
+        max-width: 980px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+        gap: 30px;
+        
+    
+        .cards{
+            background-color: $claro-dark-light;
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-rows: 60% 40%;
+            
+            p{
+                @include title_cards();
+                font-size: 20px;
+            }
+            a{
+                @include title_cards();
+                font-size: 16px;
+                span{
+                    margin-right:5px ;
+                }
+                .fas{
+                    margin-top: -50px;
+                }
+            }
+            
+        }
+    }
+
+}
+
+.title-plans{
+    @include title_cards();
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+@mixin card_section(){
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid $claro-dark-light;
+}
+
+@mixin button_plans( $size:14px ){
+    background-color: $claro-primary;
+    color: $claro-light;
+    font-size: $size;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.container-plans{
+    .content-plans{
+        margin: 0 auto;
+        max-width: 1100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+        gap: 30px;
+
+        .card-plan{
+            width: 320px;
+            border: 1px solid $claro-dark-light;
+            border-radius: 20px;
+            
+            .name-plan{
+                position: absolute;
+                p{
+                    font-size: 10px;
+                    color: $claro-light;
+                    background-color: $claro-tertiary;
+                    padding: 3px 5px;
+                    position: relative;
+                    top: -8px;
+                    left: 30px;
+                    border-radius: 5px;
+                }
+            }
+            .card-plan-item{
+                padding: 30px;
+
+                .text-left{
+                    max-width: 50%;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+                .text-right{
+                    text-align: right;
+                    max-width: 60%;
+                    font-size: 14px;
+                }
+                .first{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 0 20px 0;
+                    .plan-img{
+                        max-width: 40%;
+                        img{
+                            width: 90%;
+                        }
+                    }
+                    .plan-text{
+                        text-align: right;
+                        max-width: 80%;
+                        .title{
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        .subtitle{
+                            font-size: 14px;
+                            color: $claro-dark
+                        }
+                    }
+
+                }
+                .second{
+                    @include card_section();
+                    .text-right{
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+                .third{
+                    @include card_section();
+                    height: 45px;
+                    align-items: center;
+                }
+                .fourth{
+                    @include card_section();
+                }
+                .fifth{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 20px 0 10px 0;
+                    align-items: center;
+
+                    .more{
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: $claro-tertiary;
+                    }
+                    .request{
+                        @include button_plans()
+                    }
+                }
+            }
+        }
+        
+    }
+    .more-plans{
+        width: 100%;
+        display: flex;
+        margin: 50px 0 ;
+        a {
+            margin: 0 auto;
+            @include button_plans(18px);
+            padding: 15px 50px;
+            border-radius: 30px;
+            
+        }
+    }
+}
+
+.reward{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .reward-img{
+        display: flex;
+        justify-content: end;
+        margin-right: 50px;
+        img{
+            width: 200px;
+            
+        }
+    }
+    .reward-text {
+        padding-top: 50px;
+
+        p,h3{
+            padding-bottom: 30px;
+        }
+    }
+
+}
+
+
+footer{
+    background-color: $black;
+    a{
+        color:$claro-light;
+        font-size: 16px;
+    }
+    p{
+        color:$claro-light;
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    .first-section{
+        padding: 70px 0;
+        display: grid;
+        grid-template-columns: 31% 23% 23% 23%;
+        .social-network{
+            img{
+                height: 30px;
+                margin-right: 15px;
+            }
+        }
+        img{
+            margin-bottom: 25px;
+        }
+        .number-contact{
+            color: $claro-tertiary;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        li{
+            padding: 5px 0px;
+        }
+    }
+    .second-section{
+        padding: 40px 0;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        div{
+            padding: 5px 0;
+        }
+    }
+}
+
+//media query
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 425px;
+
+@media (max-width: $breakpoint-tablet) {
+    .header-between{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        height: 128px;
+    }
+    .description{
+        p{
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+    }
+
+    footer{
+        .first-section{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 50% 50%; 
+            
+            div{
+                margin-bottom: 40px;
+            }
+        }
+
+        .second-section{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+   }
+}
+@media (max-width: $breakpoint-mobile) {
+   .audio-visual{
+    display: none; 
+   } 
+   .reward{
+        display: flex;
+        flex-direction: column;
+        .reward-img{
+            justify-content: center;
+        }
+        .reward-text{
+            padding: 30px;
+        }
+   }
+
+   footer{
+        .first-section{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 100%; 
+            
+            div{
+                margin-bottom: 40px;
+            }
+        }
+        .second-section{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 100%;
+        }
+   }
+}
